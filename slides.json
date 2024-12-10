@@ -1,0 +1,36 @@
+{
+    "101": {
+        "maxSlides": 3,
+        "slides": [
+            {
+                "text": "Benvenuto nella stanza 101! Questa è la prima slide.",
+                "image": "https://undraw.co/illustrations/image1"
+            },
+            {
+                "text": "Ecco la seconda slide della stanza 101.",
+                "image": "https://undraw.co/illustrations/image2"
+            },
+            {
+                "text": "Suca questa è una slide con un testo gigantesco solo per provare a vedere se viene messo a capo, capisti",
+                "image": "src/undraw_undraw_socialpost_9p1i_-1-_jhsm.svg"
+            }
+        ]
+    },
+    "102": {
+        "maxSlides": 3,
+        "slides": [
+            {
+                "text": "Benvenuto nella stanza 102! Questa è la prima slide.",
+                "image": "https://undraw.co/illustrations/image3"
+            },
+            {
+                "text": "Ecco la seconda slide della stanza 102.",
+                "image": "https://undraw.co/illustrations/image4"
+            },
+            {
+                "text": "Ecco la terza slide della stanza 102.",
+                "image": "https://undraw.co/illustrations/image5"
+            }
+        ]
+    }
+}

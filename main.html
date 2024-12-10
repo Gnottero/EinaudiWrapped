@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Vita al Secondo Piano</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="hero">
+    <header class="header">
+      <h1 id="main-title">La Vita al Secondo Piano</h1>
+      <p id="tagline">Dai corridoi ai lunghi aperitivi in cucina: rivivi ogni momento memorabile (o imbarazzante).</p>
+    </header>
+
+    <div class="hero-content">
+      <div class="cta">
+        <h2 id="cta-title">Scopri il tuo Wrapped del Secondo Piano!</h2>
+        <p id="cta-text">
+          Hai mai pensato a quante storie si intrecciano qui al secondo piano? Dai drammi per la cucina occupata alle serate a tema discutibili, abbiamo tutto! Inserisci il numero della tua stanza e scopri il tuo Wrapped personalizzato.
+        </p>
+        <div class="form-container">
+          <input 
+            type="text" 
+            id="roomNumber" 
+            placeholder="Numero stanza? Tipo, 204 o 210. Siamo seri." 
+            class="form-input">
+          <button id="enterRoom" class="form-button">Portami alle mie slide! 🚀</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p id="footer-text">Creato da coinquilini per coinquilini, con un pizzico di ironia e tante risate.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Language detection and dynamic content switching
+    const translations = {
+      en: {
+        mainTitle: "Life on the Second Floor",
+        tagline: "From hallway hangouts to endless nights in the kitchen: relive every memorable (or cringeworthy) moment.",
+        ctaTitle: "Unwrap Your Second Floor Highlights!",
+        ctaText: "Ever wondered how many stories unfold on the second floor? From kitchen wars to questionable themed nights, we’ve got it all! Enter your room number and discover your personalized Wrapped.",
+        placeholder: "Room number? Like 204 or 210. Be serious.",
+        button: "Take me to my slides! 🚀",
+        footerText: "Created by roommates for roommates, with a pinch of irony and a lot of laughs.",
+      },
+      it: {
+        mainTitle: "La Vita al Secondo Piano",
+        tagline: "Dai corridoi alle lunghe notti in cucina: rivivi ogni momento memorabile (o imbarazzante).",
+        ctaTitle: "Scopri il tuo Wrapped del Secondo Piano!",
+        ctaText: "Hai mai pensato a quante storie si intrecciano qui al secondo piano? Dai drammi per la cucina occupata alle serate a tema discutibili, abbiamo tutto! Inserisci il numero della tua stanza e scopri il tuo Wrapped personalizzato.",
+        placeholder: "Numero stanza? Tipo, 204 o 210. Siamo seri.",
+        button: "Portami alle mie slide! 🚀",
+        footerText: "Creato da coinquilini per coinquilini, con un pizzico di ironia e tante risate.",
+      }
+    };
+
+    const userLang = navigator.language.startsWith("it") ? "it" : "en";
+    const setLanguage = (lang) => {
+      document.getElementById("main-title").innerText = translations[lang].mainTitle;
+      document.getElementById("tagline").innerText = translations[lang].tagline;
+      document.getElementById("cta-title").innerText = translations[lang].ctaTitle;
+      document.getElementById("cta-text").innerText = translations[lang].ctaText;
+      document.getElementById("roomNumber").placeholder = translations[lang].placeholder;
+      document.getElementById("enterRoom").innerText = translations[lang].button;
+      document.getElementById("footer-text").innerText = translations[lang].footerText;
+    };
+
+    // Initialize language
+    setLanguage(userLang);
+
+    // Handle form submission
+    document.getElementById('enterRoom').addEventListener('click', () => {
+      const roomNumber = document.getElementById('roomNumber').value.trim();
+      if (roomNumber) {
+        window.location.href = `/slides.html?room=${roomNumber}`;
+      } else {
+        alert(userLang === "it" ? "Per favore, inserisci un numero di stanza valido." : "Please enter a valid room number.");
+      }
+    });
+  </script>
+</body>
+</html>
